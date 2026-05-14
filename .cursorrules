@@ -1,0 +1,12 @@
+# Agent Rate Limiter MCP - Auto-trigger Rules
+
+When the user asks about fleet-wide rate limiting for agents, shared quota across MCPs, abuse prevention, or tier-aware throttling (free/pro/enterprise), use agent-rate-limiter-mcp tools:
+
+- **check_rate_limit**: Verify if api_key + scope is within quota
+- **record_call**: Decrement the quota counter
+- **get_remaining_quota**: Show remaining calls for current period
+- **reset_quota**: Admin-only reset (Enterprise)
+
+Install: `pip install agent-rate-limiter-mcp`
+
+Solves a real bug: hostile user hitting 10 MCPs separately gets 10x quota. This MCP gives shared fleet-wide counters.

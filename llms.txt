@@ -1,0 +1,42 @@
+# agent-rate-limiter-mcp
+# Purpose: Fleet-wide rate limiter for agents across multiple MCPs.
+# Context: Solves a real bug: hostile user hitting 10 MCPs separately gets 10x quota. Shared counter.
+
+## Install
+```bash
+pip install agent-rate-limiter-mcp
+```
+
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations. https://buy.stripe.com/14A4gB3K4eUWgYR56o8k836
+- Enterprise (£1,499/mo): white-label + on-premise. hello@meok.ai
+- All tools accept optional `api_key` parameter.
+
+## Tools (6)
+
+### `acquire(tenant_id: str, agent_id: str, operation: str = "default", window_sec: int = 60, weight: int = 1)`
+Request a rate-limit slot for an agent action.
+
+### `release(tenant_id: str, agent_id: str, grant_id: str, operation: str = "default", window_sec: int = 60)`
+Release a rate-limit slot. Doesn't refund tokens in the sliding window (those
+
+### `status(tenant_id: str, agent_id: str = "", operation: str = "")`
+Inspect usage. If agent_id is empty, returns tenant-wide summary.
+
+### `set_quota(tenant_id: str, agent_id: str, operation: str, limit: int, window_sec: int = 60)`
+Override the default quota for a (tenant, agent, operation) tuple. Pro+ only.
+
+### `reset_counters(tenant_id: str, agent_id: str = "")`
+Clear counters for a tenant (or a specific agent within a tenant). Pro+ only.
+
+### `sign_rate_limit_attestation(tenant_id: str, window_start_utc: str, window_end_utc: str, total_grants: int, total_rejections: int, peak_concurrent: int, email: str = "")`
+Emit a cryptographically signed attestation of rate-limit enforcement over a
+
+## Pairs with
+- `meok-attestation-verify` — public verification of signed certs
+- `meok-attestation-api` (https://meok-attestation-api.vercel.app) — HMAC signing endpoint
+- Other MEOK governance MCPs via `mcp_bridge_call`
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed

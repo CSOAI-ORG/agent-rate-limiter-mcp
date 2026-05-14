@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "agent-rate-limiter-mcp"
+version = "1.0.2"
+description = "Fleet-wide shared rate limiter for A2A + multi-MCP deployments. Most MCP servers rate-limit independently — a hostile agent hitting 10 MCPs gets 10x quota. This MCP is the shared counter: every MCP checks here before allowing a call. Sliding window + concurrency grants + signed enforcement attestations. By MEOK AI Labs."
+license = {file = "LICENSE"}
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "MEOK AI Labs", email = "hello@meok.ai"}]
+keywords = ["mcp", "a2a", "agent-to-agent", "rate-limiting", "fleet-wide", "shared-quota", "concurrency", "dos-protection", "signed-attestation", "meok-ai-labs"]
+classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License", "Operating System :: OS Independent", "Topic :: Internet :: WWW/HTTP"]
+dependencies = ["mcp>=1.0.0"]
+
+[project.urls]
+Homepage = "https://meok.ai/agent-rate-limiter-mcp"
+Repository = "https://github.com/meok-ai-labs/agent-rate-limiter-mcp"
+
+[tool.hatch.build.targets.wheel]
+packages = ["."]
+only-include = ["server.py"]
+
+[project.scripts]
+agent-rate-limiter-mcp = "server:main"
