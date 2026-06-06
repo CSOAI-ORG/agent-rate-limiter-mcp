@@ -1,0 +1,31 @@
+{
+  "name": "agent-rate-limiter-mcp",
+  "title": "Agent Rate Limiter Mcp",
+  "description": "Fleet-wide shared rate limiter for A2A + multi-MCP deployments. Most MCP servers rate-limit independently \u2014 a hostile agent hitting 10 MCPs gets 10x quota. This MCP is the shared counter: every MCP checks here before allowing a call. Sliding window + concurrency grants + signed enforcement attestations. By MEOK AI Labs.",
+  "version": "1.0.4",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "acquire"
+    },
+    {
+      "name": "release"
+    },
+    {
+      "name": "status"
+    },
+    {
+      "name": "set_quota"
+    },
+    {
+      "name": "reset_counters"
+    },
+    {
+      "name": "sign_rate_limit_attestation"
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+name: agent-rate-limiter-mcp
+description: 'MCP server: agent-rate-limiter-mcp'
+version: 1.0.5
+author: MEOK AI Labs
+homepage: https://safetyof.ai
+repository: https://github.com/MEOK-AI-Labs/agent-rate-limiter-mcp
+license: MIT
+categories:
+- compliance
+- governance
+tools:
+- name: acquire
+  description: Request a rate-limit slot for an agent action.
+- name: release
+  description: Release a rate-limit slot. Doesn't refund tokens in the sliding window
+    (those
+- name: status
+  description: Inspect usage. If agent_id is empty, returns tenant-wide summary.
+- name: set_quota
+  description: Override the default quota for a (tenant, agent, operation) tuple.
+    Pro+ only.
+- name: reset_counters
+  description: Clear counters for a tenant (or a specific agent within a tenant).
+    Pro+ only.
+- name: sign_rate_limit_attestation
+  description: Emit a cryptographically signed attestation of rate-limit enforcement
+    over a
+build:
+  type: python
+  entrypoint: server.py
+  dependencies:
+  - mcp>=1.0.0
+runtime:
+  python: '>=3.10'
