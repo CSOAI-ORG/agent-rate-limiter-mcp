@@ -1,0 +1,24 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "agent-rate-limiter-mcp",
+    "description": "Fleet-wide shared rate limiter for A2A + multi-MCP deployments. Most MCP servers rate-limit inde...",
+    "version": "1.0.4",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "agent-rate-limiter-mcp"
+      }
+    ],
+    "capabilities": [
+      "acquire",
+      "release",
+      "status",
+      "set_quota",
+      "reset_counters",
+      "sign_rate_limit_attestation"
+    ]
+  }
+}

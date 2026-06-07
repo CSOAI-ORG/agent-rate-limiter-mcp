@@ -1,0 +1,77 @@
+{
+  "name": "agent-rate-limiter-mcp",
+  "description": "Fleet-wide shared rate limiter for A2A + multi-MCP deployments. Most MCP servers rate-limit inde...",
+  "url": "https://proofof.ai/scorecard/agent-rate-limiter-mcp.html",
+  "version": "1.0.4",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "acquire",
+      "name": "Acquire",
+      "description": "acquire via agent-rate-limiter-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "release",
+      "name": "Release",
+      "description": "release via agent-rate-limiter-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "status",
+      "name": "Status",
+      "description": "status via agent-rate-limiter-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "set_quota",
+      "name": "Set Quota",
+      "description": "set_quota via agent-rate-limiter-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "reset_counters",
+      "name": "Reset Counters",
+      "description": "reset_counters via agent-rate-limiter-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "sign_rate_limit_attestation",
+      "name": "Sign Rate Limit Attestation",
+      "description": "sign_rate_limit_attestation via agent-rate-limiter-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
