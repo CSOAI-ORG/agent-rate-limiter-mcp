@@ -5,7 +5,8 @@
   "description": "Fleet-wide shared rate limiter for A2A + multi-MCP deployments. Most MCP servers rate-limit inde...",
   "repository": {
     "url": "https://github.com/CSOAI-ORG/agent-rate-limiter-mcp",
-    "source": "github"
+    "source": "github",
+    "id": "1238513782"
   },
   "packages": [
     {
