@@ -9,7 +9,7 @@ pip install agent-rate-limiter-mcp
 
 ## Auth & Rate Limits
 - Free tier: 10 calls/day. No API key required.
-- Pro tier (£79/mo): unlimited + signed attestations. https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j
+- Pro tier (£79/mo): unlimited + signed attestations. https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t
 - Enterprise (£1,499/mo): white-label + on-premise. hello@meok.ai
 - All tools accept optional `api_key` parameter.
 

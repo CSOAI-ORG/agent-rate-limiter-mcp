@@ -101,9 +101,9 @@ and 30+ regulatory frameworks. See the full coverage matrix at [meok.ai/protocol
 | Self-host (this MCP) | £0 — MIT | Devs |
 | This MCP Starter | £29/mo | One-MCP teams |
 | This MCP Pro | £79/mo | Production + 24h SLA |
-| [Universal PAYG](https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j) | £29/mo + £0.0002/call | Spiky usage across many MCPs |
+| [Universal PAYG](https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t) | £29/mo + £0.0002/call | Spiky usage across many MCPs |
 | Substrate bundle (this category) | £99-£499/mo | A whole pack |
-| [MEOK Universe](https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j) | £1,499/mo | All 47 MCPs, 500K calls |
+| [MEOK Universe](https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t) | £1,499/mo | All 47 MCPs, 500K calls |
 
 Each tier above the free self-host adds HMAC-signed attestations verifiable at
 `verify.meok.ai`. Linux Foundation governance on the A2A spine means EU regulated
@@ -117,9 +117,9 @@ buyers can deploy without vendor-lock-in objections.
 
 | Tier | Price | What you get | Stripe |
 |---|---|---|---|
-| Smoke test | **£1** | Signed sample MCP-Hardening report + Article 50 PDF | <https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j> |
-| Quick Kit | **£9** | EU AI Act Article 50 implementation guide (C2PA + EU-Icon) | <https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j> |
-| Founder Call | **£29** | 30-min 1-on-1 with the founder | <https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j> |
+| Smoke test | **£1** | Signed sample MCP-Hardening report + Article 50 PDF | <https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t> |
+| Quick Kit | **£9** | EU AI Act Article 50 implementation guide (C2PA + EU-Icon) | <https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t> |
+| Founder Call | **£29** | 30-min 1-on-1 with the founder | <https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t> |
 
 > Refundable. UK Stripe — VAT-clean. Builds on the 81-MCP MEOK fleet.
 > Verify any signed report at <https://meok.ai/verify>.
