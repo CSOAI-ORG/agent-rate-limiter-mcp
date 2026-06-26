@@ -3,7 +3,7 @@ description: 'MCP server: agent-rate-limiter-mcp'
 version: 1.0.5
 author: MEOK AI Labs
 homepage: https://safetyof.ai
-repository: https://github.com/MEOK-AI-Labs/agent-rate-limiter-mcp
+repository: https://github.com/CSOAI-ORG/agent-rate-limiter-mcp
 license: MIT
 categories:
 - compliance
