@@ -15,7 +15,7 @@ classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :
 dependencies = ["mcp>=1.0.0"]
 
 [project.urls]
-Homepage = "https://meok.ai/agent-rate-limiter-mcp"
+Homepage = "https://meok.ai"
 Repository = "https://github.com/CSOAI-ORG/agent-rate-limiter-mcp"
 
 [tool.hatch.build.targets.wheel]

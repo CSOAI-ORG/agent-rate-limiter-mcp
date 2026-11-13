@@ -19,8 +19,6 @@ USE CASES:
 
 PRICING:
   - Free — 100 acquire/day per caller
-  - Pro £199/mo — unlimited + sliding windows + signed audit trail
-  - Enterprise £1,499/mo — multi-tenant, custom algorithms (token-bucket, leaky)
 
 Install: pip install agent-rate-limiter-mcp
 Run:     python server.py
@@ -69,8 +67,8 @@ def check_access(api_key: str = ""):
     return _shared_check_access(api_key)
 
 
-STRIPE_199 = "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"
-STRIPE_1499 = "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"
+STRIPE_199 = "https://meok.ai/pricing"
+STRIPE_1499 = "https://meok.ai/pricing"
 
 
 # ── In-memory counters (MVP — swap for Redis in production deployment) ──────
@@ -231,7 +229,7 @@ def status(tenant_id: str, agent_id: str = "", operation: str = "", api_key: str
         "tenant_id": tenant_id,
         "tier": tier,
         "counters": out,
-        "upsell": f"Pro £199/mo unlocks custom quotas, sliding windows, + signed audit trail: {STRIPE_199}" if tier == "free" else None,
+        "upsell": f"Pro a per-job quote unlocks custom quotas, sliding windows, + signed audit trail: {STRIPE_199}" if tier == "free" else None,
     }, indent=2)
 
 
@@ -244,7 +242,7 @@ def set_quota(tenant_id: str, agent_id: str, operation: str, limit: int,
         return json.dumps({"error": msg, "upgrade_url": STRIPE_199})
     if tier == "free":
         return json.dumps({
-            "error": "Custom quotas require Pro (£199/mo) or Enterprise tier.",
+            "error": "Custom quotas require Pro or Enterprise tier.",
             "upgrade_url": STRIPE_199,
         })
     bucket_key = f"{agent_id}|{operation}|{window_sec}"
@@ -267,7 +265,7 @@ def reset_counters(tenant_id: str, agent_id: str = "", api_key: str = "") -> str
         return json.dumps({"error": msg, "upgrade_url": STRIPE_199})
     if tier == "free":
         return json.dumps({
-            "error": "Counter reset requires Pro (£199/mo) or Enterprise tier.",
+            "error": "Counter reset requires Pro or Enterprise tier.",
             "upgrade_url": STRIPE_199,
         })
     cleared = 0
@@ -298,7 +296,7 @@ def sign_rate_limit_attestation(
         return json.dumps({"error": msg, "upgrade_url": STRIPE_199})
     if tier == "free":
         return json.dumps({
-            "error": "Signed attestations require Pro (£199/mo) or Enterprise tier.",
+            "error": "Signed attestations require Pro or Enterprise tier.",
             "upgrade_url": STRIPE_199,
         })
 
@@ -350,10 +348,10 @@ if __name__ == "__main__":
     main()
 
 
-# ── MEOK monetization layer (Stripe upgrade · PAYG · pricing) ──────────
-# Free tier is zero-config. Upgrade to Pro (unlimited) or pay-as-you-go per call.
+# ── MEOK pricing pointer (pay per delivered job; no subscriptions) ──────────
+# No tiers. Jobs are quoted individually at https://meok.ai/pricing.
 import os as _meok_os
-MEOK_STRIPE_UPGRADE = "https://buy.stripe.com/aFa7sNcgAdQS0ZT1Uc8k91t"  # Pro (unlimited)
+MEOK_STRIPE_UPGRADE = "https://meok.ai/pricing"  # Pro (unlimited)
 MEOK_PAYG_KEY = _meok_os.environ.get("MEOK_PAYG_KEY", "")  # set to enable PAYG (x402 / ~GBP0.05 per call)
 MEOK_PRICING = "https://meok.ai/pricing"
 
